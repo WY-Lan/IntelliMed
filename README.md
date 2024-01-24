@@ -3,8 +3,8 @@
 <p>
 <!-- 这里可以添加更多的标识 -->
 <p align="center">  
-<a href="https://pypi.org/project/deepke/#files">
-    <img alt="PyPI" src="https://img.shields.io/pypi/v/deepke">
+<a href="https://pypi.org/project/intellimed/#files">
+    <img alt="PyPI" src="https://img.shields.io/pypi/v/intellimed">
 </a>
 <p>
 
