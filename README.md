@@ -16,7 +16,7 @@ IntelliMed Nexus 工具链主要是用于医学信息抽取，包括医学实体
 
 ## 快速上手
 #### 手动环境部署
-**Step 1**：下载代码 ```git clone --depth 1 https://github.com/```（别忘记star和fork哈！！！）
+**Step 1**：下载代码 ```(https://github.com/WY-Lan/IntelliMed.git)```（别忘记star和fork哈！！！）
 
 **Step 2**：使用anaconda创建虚拟环境，进入虚拟环境
 
