@@ -1,0 +1,4 @@
+torch>=1.5
+transformers==4.36.2
+datasets==2.15.0
+marshmallow==3.19.0
