@@ -1,6 +1,6 @@
 from datasets import load_dataset
 from transformers import AutoConfig, AutoTokenizer, AutoModelForTokenClassification, DataCollatorForTokenClassification
-
+from ....Model.ner.peft import add_peft_config
 
 def process(training_args, data_args, model_args):
     data_files = {}
@@ -43,6 +43,7 @@ def process(training_args, data_args, model_args):
         use_auth_token=True if model_args.use_auth_token else None,
     )
 
+    # 这里这个model需要稍作更改
     model = AutoModelForTokenClassification.from_pretrained(
         model_args.model_name_or_path,
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
@@ -51,6 +52,8 @@ def process(training_args, data_args, model_args):
         revision=model_args.model_revision,
         use_auth_token=True if model_args.use_auth_token else None,
     )
+    # 下面是调整高效微调的方式
+    model = add_peft_config(model, model_args)
 
     padding = "max_length" if data_args.pad_to_max_length else False
 

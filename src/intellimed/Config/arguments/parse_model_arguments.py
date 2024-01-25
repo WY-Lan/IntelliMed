@@ -1,6 +1,6 @@
 import os
 import sys
-from .arguments import ModelArguments, DataTrainingArguments
+from .get_arguments import ModelArguments, DataTrainingArguments
 from transformers import TrainingArguments, HfArgumentParser
 
 def parse_model_arguments():

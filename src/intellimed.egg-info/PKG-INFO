@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: intellimed
+Version: 0.0.1
+Summary: IntelliMed Nexus Toolchain is a plug-and-play model and can be used for medical entity recognition, medical relation extraction, and medical event extraction
+Home-page: 
+Author: WY_Lan
+Author-email: 892827956@qq.com
+License: MIT
+Keywords: pip,RE,NER,AE,EE
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE

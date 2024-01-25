@@ -9,7 +9,6 @@ from intellimed.Trainer import Trainer
 from datasets import load_metric
 from functools import partial
 from intellimed.Data.metric.ner import get_metric
-import numpy as np
 
 
 if __name__ == "__main__":
@@ -17,10 +16,9 @@ if __name__ == "__main__":
     model_args, data_args, training_args = parse_model_arguments()
     logger = set_logger(training_args)
     # Detecting last checkpoint
-    logger, last_checkpoint = load_checkpoint.load_checkpoint(logger, training_args)
+    logger, last_checkpoint = load_checkpoint(logger, training_args)
     set_seed(training_args.seed)
     model, train_dataset, eval_dataset, predict_dataset, tokenizer, data_collator, label_list = process(training_args, data_args, model_args)
-
     compute_metrics = partial(get_metric.compute_metrics, label_list=label_list, data_args = data_args)
 
     # initial our trainer

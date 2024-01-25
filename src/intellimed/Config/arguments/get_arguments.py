@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Optional, Union, List
+from typing import Optional, Union, List, Any
 from marshmallow.validate import OneOf
 
 
@@ -61,6 +61,7 @@ class ModelArguments:
         default=0.0,
         metadata={"help": "Lora dropout."}
     )
+    
     num_virtual_tokens: Optional[int] = field(
         default=None,
         metadata={"help": "Prefix encoder hidden size."}
@@ -122,8 +123,8 @@ class ModelArguments:
         metadata={"help": "The dropout of the prompt encoder"},
     )
     # ia3
-    target_modules: Optional[Union[List[str], str]] = field(
-        default=["key", "value", "output.dense"],
+    target_modules: Optional[Any] = field(
+        default=None,
         metadata={
             "help": "List of module names or regex expression of the module names to replace with ia3."
             "For example, ['q', 'v'] or '.*decoder.*(SelfAttention|EncDecAttention).*(q|v)$' "
